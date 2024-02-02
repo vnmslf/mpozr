@@ -1,0 +1,199 @@
+<?
+AddEventHandler('main', 'OnBeforeEventSend', Array("beforeCEvent", "my_OnBeforeEventSend"));
+class beforeCEvent
+{
+	function getDelivery($id){
+		require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+		CModule::IncludeModule("sale");
+		if ($arDeliv = CSaleDelivery::GetByID($id))
+		{
+			return $arDeliv["NAME"];
+		}
+	}
+	function getPaysystem($id){
+		require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+		CModule::IncludeModule("sale");
+		if ($arPaySys = CSalePaySystem::GetByID($id))
+		{
+			return $arPaySys["PSA_NAME"];
+		}
+	}
+	function getOrderParams($orderID){
+		require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+		CModule::IncludeModule("sale");
+		$arResult = CSaleOrder::GetByID($orderID);
+		return $arResult;
+	}
+	function getOrderProps($orderID){
+		require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+		CModule::IncludeModule("sale");
+		$db_props = CSaleOrderPropsValue::GetOrderProps($orderID);
+		while ($arProps = $db_props->Fetch()){
+			$arResult[] = $arProps;
+		}
+		return $arResult;
+	}
+	function getOrder($orderID){
+		require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+		CModule::IncludeModule("sale");
+		$dbBasketItems = CSaleBasket::GetList(array(), array("ORDER_ID" => $orderID), false, false, array("ID", "NAME", 'DETAIL_PAGE_URL', 'DETAIL_PICTURE', "PRODUCT_ID", "QUANTITY", "PRICE", "CURRENCY"));
+		while ($arItems = $dbBasketItems->Fetch())
+		{
+		    $arBasketItems['ITEMS'][] = $arItems;
+		    $arBasketItems['IDS'][] = $arItems['PRODUCT_ID'];
+		}
+		return $arBasketItems;
+
+	}
+	function getItems($ids){
+		require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
+		CModule::IncludeModule("iblock");
+
+		$arSelect = Array('IBLOCK_ID', 'ID', 'NAME', 'DETAIL_PAGE_URL', 'DETAIL_PICTURE', 'PROPERTY_CML2_ARTICLE', 'PROPERTY_CML2_LINK');
+		$arFilter = Array('IBLOCK_ID' => 2, 'ID' => $ids);
+		$res = CIBlockElement::GetList(Array('PROPERTY_CML2_ARTICLE' => 'ASC'), $arFilter, false, false, $arSelect);
+		while($ob = $res->GetNextElement())
+		{
+			$arFields = $ob->GetFields();
+			$arResult['ITEMS'][$arFields['ID']] = $arFields;
+			$arResult['IDS'][] = $arFields['PROPERTY_CML2_LINK_VALUE'];
+		}
+		return $arResult;
+	}
+	function my_OnBeforeEventSend(&$arFields, $arTemplate)
+	{
+		if($arTemplate['ID'] == 43){
+			$arBasketItems = self::getOrder($arFields['ORDER_REAL_ID']);
+			$arResult = self::getItems($arBasketItems['IDS']);
+
+			$arResult_SKU = self::getItems($arResult['IDS']);
+
+			$orderProps = self::getOrderProps($arFields['ORDER_REAL_ID']);
+			$order = self::getOrderParams($arFields['ORDER_REAL_ID']);
+			if($order['USER_DESCRIPTION']){
+				$arFields['COMMENT'] = '<b>Комментарий:</b> '.$order['USER_DESCRIPTION'];
+			} else {
+				$arFields['COMMENT'] = '';
+			}
+			$paysystem = self::getPaysystem($order['PAY_SYSTEM_ID']);
+			if(!empty($paysystem)){
+				$arFields['PAY_SYSTEM'] = '<b>Способ оплаты:</b> '.$paysystem;
+			} else {
+				$arFields['PAY_SYSTEM'] = '';
+			}
+			$delivery = self::getDelivery($order['DELIVERY_ID']);
+			if(!empty($delivery)){
+				$arFields['DELIVERY'] = '<b>Способ доставки:</b> '.$delivery;
+			} else {
+				$arFields['DELIVERY'] = '';
+			}
+						
+			foreach($orderProps as $prop){
+				if(!empty($prop['VALUE'])){
+					if($prop['CODE'] == 'LOCATION'){
+						$arLocs = CSaleLocation::GetByID($prop['VALUE']);
+						$propsString .= '<strong>'.$prop['NAME'].':</strong> '.$arLocs['COUNTRY_NAME'].' '.$arLocs['REGION_NAME'].' '.$arLocs['CITY_NAME'].'<br>';
+					} else {
+						$propsString .= '<strong>'.$prop['NAME'].':</strong> '.$prop['VALUE'].'<br>';
+					}
+				}
+			}
+			$arFields['ORDER_PROPS'] = $propsString;
+			
+			$table = '<table border="1" bordercolor="black" cellpadding="0" cellspacing="0"><thead><tr>';
+			$table .= '<td style="padding: 5px;">№</td>';
+            $table .= '<td style="padding: 5px;">Фотография</td>';
+			$table .= '<td style="padding: 5px;">Наименование</td>';
+			$table .= '<td style="padding: 5px;">Кол-во</td>';
+			$table .= '<td style="padding: 5px;">Цена c НДС, руб</td>';
+			$table .= '<td style="padding: 5px;">Сумма c НДС, руб</td>';
+			$table .= '</tr></thead><tbody>';
+			foreach($arBasketItems['ITEMS'] as $key => $arItem){
+
+           
+
+
+				$price = $arItem['PRICE'];
+				$ID = $arItem['ID'];
+          
+                $image = $arItem['DETAIL_PICTURE']['SRC'];
+                
+				$q = $arItem['QUANTITY'];
+				$curr = $arItem['CURRENCY'];
+				if($arResult['ITEMS'][$arItem['PRODUCT_ID']]['PROPERTY_CML2_LINK_VALUE']){
+					$art = $arResult_SKU['ITEMS'][$arResult['ITEMS'][$arItem['PRODUCT_ID']]['PROPERTY_CML2_LINK_VALUE']]['PROPERTY_CML2_ARTICLE_VALUE'];
+				} else {
+					$art = $arResult['ITEMS'][$arItem['PRODUCT_ID']]['PROPERTY_CML2_ARTICLE_VALUE'];
+				}
+				$table .= '<tr>';
+				$table .= '<td style="padding: 5px;">'.($key+1).'.</td>';
+                $table .= '<td style="padding: 5px;">'.$image.'</td>';
+
+				$table .= '<td style="padding: 5px;"><a href="'.$arItem['DETAIL_PAGE_URL'].'">'.$arItem['NAME'].'</a></td>';
+				$table .= '<td style="padding: 5px;">'.$q.'</td>';
+				$table .= '<td style="padding: 5px;">'.CCurrencyLang::CurrencyFormat($price, 'BYN').'</td>';
+				$table .= '<td style="padding: 5px;">'.CCurrencyLang::CurrencyFormat($price*$q, 'BYN').'</td>';
+				$table .= '</tr>';
+			}
+			$table .= '</tbody>';
+			$table .= '</table>';
+			$arFields['ORDER_LIST'] = $table;
+		}
+	}
+}
+
+
+
+
+AddEventHandler('sale', 'OnOrderNewSendEmail', array(' CSendOrderTable', 'OnOrderNewSendEmailHandler')); class CSendOrderTable
+{
+public static function OnOrderNewSendEmailHandler($ID, &$eventName, &$arFields)
+{
+if ($ID>0 && CModule::IncludeModule('iblock'))
+{
+$arFields['ORDER_LIST'] = '<table cellpadding="5" cellspacing="5">';
+$rsBasket = CSaleBasket::GetList(array(), array('ORDER_ID' => $ID));
+while ($arBasket = $rsBasket->GetNext())
+{
+$arPicture = false;
+if ($arBasket['MODULE'] == 'catalog')
+{
+$mxResult = CCatalogSku::GetProductInfo( $arBasket['PRODUCT_ID'] );
+
+if (is_array($mxResult) && !empty($mxResult['ID']))
+{
+$arProduct = CIBlockElement::GetByID($mxResult['ID'])->Fetch();;
+} else {
+$arProduct = CIBlockElement::GetByID($arBasket['PRODUCT_ID'])->Fetch();
+}
+
+if ($arProduct) {
+if ($arProduct['PREVIEW_PICTURE'] > 0) {
+$fileID = $arProduct['PREVIEW_PICTURE'];
+} elseif ($arProduct['DETAIL_PICTURE'] > 0) {
+$fileID = $arProduct['DETAIL_PICTURE'];
+} else {
+$fileID = 0;
+}
+$arPicture = CFile::ResizeImageGet($fileID, array('width' => 90, 'height' => 110));
+$arPicture['SIZE'] = getimagesize($_SERVER['DOCUMENT_ROOT'].$arPicture['src']);
+}
+}
+
+$arFields['ORDER_LIST'] .= '<tr valign="top">'
+. '<td>'.($arPicture ? '<img src="http://'.$GLOBALS['SERVER_NAME'].(str_replace(array('+', ' '), '%20', $arPicture['src']))
+.'" width="'.$arPicture['SIZE'][0].'" height="'.$arPicture['SIZE'][1].'" alt="">' : '').'</td>'
+                    . '<td>'.$arBasket['NAME'].'</td>'
+                    . '<td style="white-space: nowrap">'.(int)$arBasket['QUANTITY'].' шт.</td>'
+                    . '<td style="white-space: nowrap">'.SaleFormatCurrency($arBasket['PRICE'], 
+$arBasket['CURRENCY']).'</td>'
+                    . '</tr>';
+            }
+
+            $arFields['ORDER_LIST'] .= '</table>';
+        }
+    }
+}
+
+
+?>

@@ -1,0 +1,561 @@
+Array
+(
+    [0] => Array
+        (
+            [0] => Головные уборы
+            [1] => /catalog/golovnye-ubory
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 1
+                )
+
+        )
+
+    [1] => Array
+        (
+            [0] => Зимние
+            [1] => /catalog/golovnye-ubory/zimnie
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory/zimnie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [2] => Array
+        (
+            [0] => Женские
+            [1] => /catalog/golovnye-ubory/zimnie/zhenskie
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory/zimnie/zhenskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [3] => Array
+        (
+            [0] => Мужские
+            [1] => /catalog/golovnye-ubory/zimnie/muzhskie
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory/zimnie/muzhskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [4] => Array
+        (
+            [0] => Летние
+            [1] => /catalog/golovnye-ubory/letnie
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory/letnie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [5] => Array
+        (
+            [0] => Женские
+            [1] => /catalog/golovnye-ubory/letnie/zhenskie
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory/letnie/zhenskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [6] => Array
+        (
+            [0] => Мужские
+            [1] => /catalog/golovnye-ubory/letnie/muzhskie
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory/letnie/muzhskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [7] => Array
+        (
+            [0] => Воротники
+            [1] => /catalog/golovnye-ubory/vorotniki
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory/vorotniki
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [8] => Array
+        (
+            [0] => Прочее
+            [1] => /catalog/golovnye-ubory/prochee
+            [2] => Array
+                (
+                    [0] => /catalog/golovnye-ubory/prochee
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [9] => Array
+        (
+            [0] => Одежда
+            [1] => /catalog/odejda
+            [2] => Array
+                (
+                    [0] => /catalog/odejda
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 1
+                )
+
+        )
+
+    [10] => Array
+        (
+            [0] => Форменные кож.куртки и плащи из нат.кожи
+            [1] => /catalog/odejda/formennye-kozh-kurtki-i-plashchi-iz-nat-kozhi
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/formennye-kozh-kurtki-i-plashchi-iz-nat-kozhi
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [11] => Array
+        (
+            [0] => Женские
+            [1] => /catalog/odejda/formennye-kozh-kurtki-i-plashchi-iz-nat-kozhi/zhenskie
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/formennye-kozh-kurtki-i-plashchi-iz-nat-kozhi/zhenskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [12] => Array
+        (
+            [0] => Мужские
+            [1] => /catalog/odejda/formennye-kozh-kurtki-i-plashchi-iz-nat-kozhi/muzhskie
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/formennye-kozh-kurtki-i-plashchi-iz-nat-kozhi/muzhskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [13] => Array
+        (
+            [0] => Форменные пиджаки и жакеты
+            [1] => /catalog/odejda/formennye-pidzhaki-i-zhakety
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/formennye-pidzhaki-i-zhakety
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [14] => Array
+        (
+            [0] => Женские
+            [1] => /catalog/odejda/formennye-pidzhaki-i-zhakety/zhenskie
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/formennye-pidzhaki-i-zhakety/zhenskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [15] => Array
+        (
+            [0] => Мужские
+            [1] => /catalog/odejda/formennye-pidzhaki-i-zhakety/muzhskie
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/formennye-pidzhaki-i-zhakety/muzhskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [16] => Array
+        (
+            [0] => Офисная форма
+            [1] => /catalog/odejda/ofisnaya-forma
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/ofisnaya-forma
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [17] => Array
+        (
+            [0] => Женские
+            [1] => /catalog/odejda/ofisnaya-forma/zhenskie
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/ofisnaya-forma/zhenskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [18] => Array
+        (
+            [0] => Мужские
+            [1] => /catalog/odejda/ofisnaya-forma/muzhskie
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/ofisnaya-forma/muzhskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [19] => Array
+        (
+            [0] => Рубашки, блузки, футболки
+            [1] => /catalog/odejda/rubashki-bluzki-futbolki
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/rubashki-bluzki-futbolki
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [20] => Array
+        (
+            [0] => Женские
+            [1] => /catalog/odejda/rubashki-bluzki-futbolki/zhenskie
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/rubashki-bluzki-futbolki/zhenskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [21] => Array
+        (
+            [0] => Мужские
+            [1] => /catalog/odejda/rubashki-bluzki-futbolki/muzhskie
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/rubashki-bluzki-futbolki/muzhskie
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 3
+                )
+
+        )
+
+    [22] => Array
+        (
+            [0] => Прочее
+            [1] => /catalog/odejda/prochee
+            [2] => Array
+                (
+                    [0] => /catalog/odejda/prochee
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [23] => Array
+        (
+            [0] => Аксессуары
+            [1] => /catalog/aksessuary
+            [2] => Array
+                (
+                    [0] => /catalog/aksessuary
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 1
+                    [DEPTH_LEVEL] => 1
+                )
+
+        )
+
+    [24] => Array
+        (
+            [0] => Галстуки и платки
+            [1] => /catalog/aksessuary/galstuki-i-platki
+            [2] => Array
+                (
+                    [0] => /catalog/aksessuary/galstuki-i-platki
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [25] => Array
+        (
+            [0] => Погоны и шевроны
+            [1] => /catalog/aksessuary/pogony-i-shevrony
+            [2] => Array
+                (
+                    [0] => /catalog/aksessuary/pogony-i-shevrony
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [26] => Array
+        (
+            [0] => Нагрудные знаки
+            [1] => /catalog/aksessuary/nagrudnye-znaki
+            [2] => Array
+                (
+                    [0] => /catalog/aksessuary/nagrudnye-znaki
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [27] => Array
+        (
+            [0] => Перчатки
+            [1] => /catalog/aksessuary/perchatki
+            [2] => Array
+                (
+                    [0] => /catalog/aksessuary/perchatki
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [28] => Array
+        (
+            [0] => Ремни и пояса
+            [1] => /catalog/aksessuary/remni-i-poyasa
+            [2] => Array
+                (
+                    [0] => /catalog/aksessuary/remni-i-poyasa
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 2
+                )
+
+        )
+
+    [29] => Array
+        (
+            [0] => Подарки, сувениры и сопутствующие товары
+            [1] => /catalog/podarki-i-suveniry
+            [2] => Array
+                (
+                    [0] => /catalog/podarki-i-suveniry
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 1
+                )
+
+        )
+
+    [30] => Array
+        (
+            [0] => Товары со скидками
+            [1] => /catalog/tovary-so-skidkami
+            [2] => Array
+                (
+                    [0] => /catalog/tovary-so-skidkami
+                )
+
+            [3] => Array
+                (
+                    [FROM_IBLOCK] => 1
+                    [IS_PARENT] => 
+                    [DEPTH_LEVEL] => 1
+                )
+
+        )
+
+)

@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Headgear", 
+		"/en/catalog/golovnye-ubory/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Clothes", 
+		"/en/catalog/odejda/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Accessories", 
+		"/en/catalog/aksessuary/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Souvenirs and Presents", 
+		"/en/catalog/podarki-i-suveniry/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Discount Goods", 
+		"/en/catalog/tovary-so-skidkami/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>
