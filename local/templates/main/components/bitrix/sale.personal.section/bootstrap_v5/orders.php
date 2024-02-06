@@ -17,7 +17,7 @@ if (strlen($arParams["MAIN_CHAIN_NAME"]) > 0)
 {
 	$APPLICATION->AddChainItem(htmlspecialcharsbx($arParams["MAIN_CHAIN_NAME"]), $arResult['SEF_FOLDER']);
 }
-
+$_REQUEST['show_all'] = "Y";
 $APPLICATION->AddChainItem(Loc::getMessage("SPS_CHAIN_ORDERS"), $arResult['PATH_TO_ORDERS']);
 $APPLICATION->IncludeComponent(
 	"bitrix:sale.personal.order.list",
