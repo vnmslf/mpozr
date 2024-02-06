@@ -109,7 +109,7 @@ $APPLICATION->SetTitle("Фабрика «Золотое Руно»");
 	),
 	false
 );
-?>
+?> 
 
 
 
