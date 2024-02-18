@@ -436,7 +436,7 @@ if (!\Bitrix\Main\Loader::includeModule('landing'))
 
 
 								<div class="t2">
-									<a href="/<?php $url = $_SERVER['REQUEST_URI'];	$str = str_replace('/en/', '', $url);echo $str;?>">RU</a>
+									<?/*<a href="/<?php $url = $_SERVER['REQUEST_URI'];	$str = str_replace('/en/', '', $url);echo $str;?>">RU</a>*/?>
 									<div class="search">
 										<img src="<?=SITE_TEMPLATE_PATH?>/img/search.svg" alt="">
 										<form action="/catalog_search/">
@@ -486,7 +486,7 @@ if (!\Bitrix\Main\Loader::includeModule('landing'))
 						</div>
 
 					<div class="t2">
-						<a href="/en<?php $url = $_SERVER['REQUEST_URI']; echo $url; ?>">ENG</a>
+						<?/*<a href="/en<?php $url = $_SERVER['REQUEST_URI']; echo $url; ?>">ENG</a>*/?>
 						<div class="search">
 							<img src="<?=SITE_TEMPLATE_PATH?>/img/search.svg" alt="">
 							<form action="/catalog_search/">
