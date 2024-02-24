@@ -1,26 +1,24 @@
 <?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("keywords", "форменная одежда из кожи и меха");
-$APPLICATION->SetPageProperty("title", "Фабрика «Золотое Руно». Форменная одежда и обмундирование – цены от производителя.");
-$APPLICATION->SetPageProperty("description", "Форменная одежда и головные уборы силовых структур из кожи и меха, аксессуары. Цены производителя. Одевайтесь по уставу.");
-$APPLICATION->SetTitle("Фабрика «Золотое Руно»");
+require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+$APPLICATION->SetPageProperty('keywords', 'форменная одежда из кожи и меха');
+$APPLICATION->SetPageProperty('title', 'Фабрика «Золотое Руно». Форменная одежда и обмундирование – цены от производителя.');
+$APPLICATION->SetPageProperty('description', 'Форменная одежда и головные уборы силовых структур из кожи и меха, аксессуары. Цены производителя. Одевайтесь по уставу.');
+$APPLICATION->SetTitle('Фабрика «Золотое Руно»');
+use Bitrix\Main\Page\Asset;
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/css/advantages.min.css');
 ?>
-
-<!-- 
-
+<!--
 <div class="sliders">
-            <div><img src="<?=SITE_TEMPLATE_PATH?>/img/slide1.png" alt=""></div>
-              <div><img src="<?=SITE_TEMPLATE_PATH?>/img/slide2.png" alt=""></div>
-            <div><img src="<?=SITE_TEMPLATE_PATH?>/img/slide3.png" alt=""></div>
-            <div><img src="<?=SITE_TEMPLATE_PATH?>/img/slide4.png" alt=""></div>
-
-</div> -->
-
+	<div><img src="<?=SITE_TEMPLATE_PATH?>/img/slide1.png" alt=""></div>
+	<div><img src="<?=SITE_TEMPLATE_PATH?>/img/slide2.png" alt=""></div>
+	<div><img src="<?=SITE_TEMPLATE_PATH?>/img/slide3.png" alt=""></div>
+	<div><img src="<?=SITE_TEMPLATE_PATH?>/img/slide4.png" alt=""></div>
+</div>
+-->
 <?
-	
-	$APPLICATION->IncludeComponent(
-	"bitrix:news", 
-	"slider", 
+$APPLICATION->IncludeComponent(
+	"bitrix:news",
+	"slider",
 	array(
 		"COMPONENT_TEMPLATE" => "slider",
 		"IBLOCK_TYPE" => "slider",
@@ -109,186 +107,225 @@ $APPLICATION->SetTitle("Фабрика «Золотое Руно»");
 	),
 	false
 );
-?> 
-
-
-
-
-              <div class="wrap">
-                <div class="blocks">
-                  <div class="block1">
-					<a href="/catalog/golovnye-ubory/zimnie">
+?>
+<div class="wrap">
+	<div class="blocks">
+		<div class="block1">
+			<a href="/catalog/golovnye-ubory/zimnie">
+				<div class="inz">
+					<p>Головные уборы</p>
+					<span>Зимние шапки</span>
+				</div>
+				<img src="/local/templates/main/img/glavnaya-shapka.jpg" alt="">
+			</a>
+		</div>
+		<div class="block2">
+			<div class="block3">
+				<a href="/catalog/odejda/formennye-kozh-kurtki-i-plashchi-iz-nat-kozhi">
 					<div class="inz">
-						<p>Головные уборы</p>
-						<span>Зимние шапки</span>
-					</div>
-					<img src="/local/templates/main/img/glavnaya-shapka.jpg" alt="">
-				</a>
-                  </div>
-
-                  <div class="block2">
-                    <div class="block3">
-					  <a href="/catalog/odejda/formennye-kozh-kurtki-i-plashchi-iz-nat-kozhi">
-					  <div class="inz">
 						<p>Форменная одежда</p>
 						<span>Куртки и плащи</span>
 					</div>
-					  <img src="/local/templates/main/img/glavnaya-kozhannaya.jpg" alt=""></a>
-                    </div>
-
-                    <div class="block4">
-					  <a href="catalog/odejda/formennye-pidzhaki-i-zhakety">
-					  <div class="inz">
+					<img src="/local/templates/main/img/glavnaya-kozhannaya.jpg" alt="">
+				</a>
+			</div>
+			<div class="block4">
+				<a href="catalog/odejda/formennye-pidzhaki-i-zhakety">
+					<div class="inz">
 						<p>Текстильная</p>
 						<span>Форменная одежда</span>
 					</div>
-					  <img src="/local/templates/main/img/glavnaya-formennaya.jpg" alt=""></a>
-					  <a href="/catalog/aksessuary/pogony-i-shevrony">
-					  <div class="inz">
+					<img src="/local/templates/main/img/glavnaya-formennaya.jpg" alt="">
+				</a>
+				<a href="/catalog/aksessuary/pogony-i-shevrony">
+					<div class="inz">
 						<p>Аксессуары</p>
 						<span>Знаки отличия</span>
-						</div>
-					  <img src="/local/templates/main/img/block4.png" alt=""></a>
-                    </div>
-
-
-                  </div>
-                </div>
-
-              </div>
-
-      <div class="wrap">
-                <div class="preims">
-
-                  <div class="preim">
-                    <div class="ptitle">
-                      Всегда в наличии
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/home/vsegda-v-nalichii.svg" alt="">
-                    <div class="pbig">
-                      готовые изделия на складе в Москве
-                    </div>
-                    <span>ИЗГОТОВИМ ДЛЯ ВАС, ДАЖЕ ЕСЛИ В НАЛИЧИИ НЕ ОКАЖЕТСЯ ИЗДЕЛИЯ ВАШЕГО РАЗМЕРА</span>
-                  </div>
-
-                  <div class="preim">
-                    <div class="ptitle">
-                      ИНДИВИДУАЛЬНЫЙ ПОШИВ
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/home/indiv_poshiv.svg" alt="">
-                    <div class="pbig">
-                      ЗАКАЖИТЕ ПОШИВ ФОРМЕННОЙ ОДЕЖДЫ И ГОЛОВНЫХ УБОРОВ ПО ВАШИМ МЕРКАМ
-                    </div>
-                    <span>ЗАПОЛНИТЕ ОБМЕРОЧНЫЙ ЛИСТ
-<a href="/list/">НА НАШЕМ САЙТЕ</a> И ДОЖДИТЕСЬ ОТВЕТ
-МЕНЕДЖЕРА О СРОКАХ И СТОИМОСТИ
-ЗАКАЗА</span>
-                  </div>
-
-                  <div class="preim">
-                    <div class="ptitle">
-                      ОПТОВЫЕ ПОСТАВКИ
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/home/optovym-pokupateliam.svg" alt="">
-                    <div class="pbig">
-                      ОПТОВЫМ ПОКУПАТЕЛЯМ ВЫГОДНЫЕ УСЛОВИЯ
-                    </div>
-                    <span>ФАБРИКА ПРИГЛАШАЕТ
-ОПТОВЫХ ПОКУПАТЕЛЕЙ
-И ПРЕДЛАГАЕТ ИНДИВИДУАЛЬНЫЕ
-УСЛОВИЯ СОТРУДНИЧЕСТВА</span>
-                  </div>
-                </div>
+					</div>
+					<img src="/local/templates/main/img/block4.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
 </div>
+<div class="wrap">
+	<div class="preims">
+		<div class="preim">
+			<div class="ptitle">Всегда в наличии</div>
+			<img src="<?=SITE_TEMPLATE_PATH?>/img/home/vsegda-v-nalichii.svg" alt="">
+			<div class="pbig">готовые изделия на складе в Москве</div>
+			<span>ИЗГОТОВИМ ДЛЯ ВАС, ДАЖЕ ЕСЛИ В НАЛИЧИИ НЕ ОКАЖЕТСЯ ИЗДЕЛИЯ ВАШЕГО РАЗМЕРА</span>
+		</div>
+		<div class="preim">
+			<div class="ptitle">
+				ИНДИВИДУАЛЬНЫЙ ПОШИВ
+			</div>
+			<img src="<?=SITE_TEMPLATE_PATH?>/img/home/indiv_poshiv.svg" alt="">
+			<div class="pbig">
+				ЗАКАЖИТЕ ПОШИВ ФОРМЕННОЙ ОДЕЖДЫ И ГОЛОВНЫХ УБОРОВ ПО ВАШИМ МЕРКАМ
+			</div>
+			<span>ЗАПОЛНИТЕ ОБМЕРОЧНЫЙ ЛИСТ
+				<a href="/list/">НА НАШЕМ САЙТЕ</a> И ДОЖДИТЕСЬ ОТВЕТ
+				МЕНЕДЖЕРА О СРОКАХ И СТОИМОСТИ
+			ЗАКАЗА</span>
+		</div>
+		<div class="preim">
+			<div class="ptitle">ОПТОВЫЕ ПОСТАВКИ</div>
+			<img src="<?=SITE_TEMPLATE_PATH?>/img/home/optovym-pokupateliam.svg" alt="">
+			<div class="pbig">ОПТОВЫМ ПОКУПАТЕЛЯМ ВЫГОДНЫЕ УСЛОВИЯ</div>
+			<span>ФАБРИКА ПРИГЛАШАЕТ
+				ОПТОВЫХ ПОКУПАТЕЛЕЙ
+				И ПРЕДЛАГАЕТ ИНДИВИДУАЛЬНЫЕ
+			УСЛОВИЯ СОТРУДНИЧЕСТВА</span>
+		</div>
+	</div>
+</div>
+<div class="wrap">
+	<div class="advantages">
+		<div class="advantages__block">
+			<a href="/list/" class="info">
+				<span class="left">
+					<span class="caption">Обмерочный лист</span>
+					<span class="descr">Электронная<br />форма</span>
+					<span class="action">Заполнить</span>
+				</span>
+				<span class="right">
+					<img src="<?=SITE_TEMPLATE_PATH?>/img/advantages/adv_1.png" alt="">
+				</span>
+			</a>
+		</div>
+		<div class="advantages__block">
+			<a href="/list/zr-ol-man.doc" class="info">
+				<span class="left">
+					<span class="caption">Обмерочный лист</span>
+					<span class="descr">Мужской</span>
+					<span class="action">
+						<span class="action__icon">
+							<img src="<?=SITE_TEMPLATE_PATH?>/img/advantages/word.png" alt="">
+						</span>
+						<span class="action__texts">
+							<span class="text">Скачать .doc</span>
+							<span class="text">Заполнить</span>
+							<span class="text">Отправить по Email</span>
+						</span>
+					</span>
+				</span>
+				<span class="right">
+					<img src="<?=SITE_TEMPLATE_PATH?>/img/advantages/adv_2-new.png" alt="">
+				</span>
+			</a>
+		</div>
+		<div class="advantages__block">
+			<a href="/list/zr-ol-woman.doc" class="info">
+				<span class="left">
+					<span class="caption">Обмерочный лист</span>
+					<span class="descr">Женский</span>
+					<span class="action">
+						<span class="action__icon">
+							<img src="<?=SITE_TEMPLATE_PATH?>/img/advantages/word.png" alt="">
+						</span>
+						<span class="action__texts">
+							<span class="text">Скачать .doc</span>
+							<span class="text">Заполнить</span>
+							<span class="text">Отправить по Email</span>
+						</span>
+					</span>
+				</span>
+				<span class="right">
+					<img src="<?=SITE_TEMPLATE_PATH?>/img/advantages/adv_3.png" alt="">
+				</span>
+			</a>
+		</div>
+	</div>
+</div>
+		<!-- begin fillter -->
 
-    <!-- begin fillter -->
+		<div class="fillter">
+			<div class="zg">БЫСТРЫЙ ПОИСК</div>
+			<div class="zag">ФОРМЕННАЯ ОДЕЖДА и ГОЛОВНЫЕ УБОРЫ</div>
+				<div class="wrap">
+						<div class="fills_1">
+							<a href="/vysshego-komandnogo-sostava/" class="fill_1">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f1.png" alt="">
+								<span>ВЫСШЕГО КОМАНДНОГО СОСТАВА</span>
+							</a>
 
-    <div class="fillter">
-      <div class="zg">БЫСТРЫЙ ПОИСК</div>
-      <div class="zag">ФОРМЕННАЯ ОДЕЖДА и ГОЛОВНЫЕ УБОРЫ</div>
-        <div class="wrap">
-            <div class="fills_1">
-              <a href="/vysshego-komandnogo-sostava/" class="fill_1">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f1.png" alt="">
-                <span>ВЫСШЕГО КОМАНДНОГО СОСТАВА</span>
-              </a>
+							<a href="/ofitserskogo-sostava/"   class="fill_1">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f2.png" alt="">
+								<span>ОФИЦЕРСКОГО СОСТАВА</span>
+							</a>
 
-              <a href="/ofitserskogo-sostava/"   class="fill_1">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f2.png" alt="">
-                <span>ОФИЦЕРСКОГО СОСТАВА</span>
-              </a>
+							<a href="/ryadovogo-sostava/" class="fill_1">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f3.png" alt="">
+								<span>РЯДОВОГО СОСТАВА</span>
+							</a>
+						</div>
 
-              <a href="/ryadovogo-sostava/" class="fill_1">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f3.png" alt="">
-                <span>РЯДОВОГО СОСТАВА</span>
-              </a>
-            </div>
+						<div class="fills_2">
 
-            <div class="fills_2">
-
-              <a href="/men/" class="fill_2">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f4.png" alt="">
-                <span>Мужчинам</span>
-              </a>
-              <a href="/women/" class="fill_2">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f5.png" alt="">
-                <span>Женщинам</span>
-              </a>
+							<a href="/men/" class="fill_2">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f4.png" alt="">
+								<span>Мужчинам</span>
+							</a>
+							<a href="/women/" class="fill_2">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f5.png" alt="">
+								<span>Женщинам</span>
+							</a>
 
 
-            </div>
+						</div>
 
 
 
-            <div class="fills_3">
+						<div class="fills_3">
 
-              <a href="/winter-parade/" class="fill_3">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f6.png" alt="">
-                <span>Зимняя парадная</span>
-              </a>
-              <a href="/summer-parade/" class="fill_3">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f7.png" alt="">
-                <span>Летняя парадная</span>
-              </a>
-              <a href="/winter-casual/" class="fill_3">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f8.png" alt="">
-                <span>Зимняя повседневная</span>
-              </a>
-              <a href="/shtab/" class="fill_3">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f9.png" alt="">
-                <span>Штабная</span>
-              </a>
-              <a href="/winter-field/" class="fill_3">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f10.png" alt="">
-                <span>Зимняя полевая</span>
-              </a>
-              <a href="/summer-field/" class="fill_3">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/f11.png" alt="">
-                <span>Летняя полевая</span>
-              </a>
-
-
-            </div>
-
-            <a href="/filter" class="fills_4">Подобрать<br/> по собственным<br/> параметрам</a>
+							<a href="/winter-parade/" class="fill_3">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f6.png" alt="">
+								<span>Зимняя парадная</span>
+							</a>
+							<a href="/summer-parade/" class="fill_3">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f7.png" alt="">
+								<span>Летняя парадная</span>
+							</a>
+							<a href="/winter-casual/" class="fill_3">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f8.png" alt="">
+								<span>Зимняя повседневная</span>
+							</a>
+							<a href="/shtab/" class="fill_3">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f9.png" alt="">
+								<span>Штабная</span>
+							</a>
+							<a href="/winter-field/" class="fill_3">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f10.png" alt="">
+								<span>Зимняя полевая</span>
+							</a>
+							<a href="/summer-field/" class="fill_3">
+								<img src="<?=SITE_TEMPLATE_PATH?>/img/f11.png" alt="">
+								<span>Летняя полевая</span>
+							</a>
 
 
-        </div>
-    </div>
+						</div>
+
+						<a href="/filter" class="fills_4">Подобрать<br/> по собственным<br/> параметрам</a>
 
 
-    <!-- end fillter -->
+				</div>
+		</div>
+
+
+		<!-- end fillter -->
 
 
 
 
 
-                <!-- begin catalog -->
-              <div class="wrap">
-                                <div class="catalog">
-                                  <div class="titled">
-                                    Головные уборы
-                                  </div>
+								<!-- begin catalog -->
+							<div class="wrap">
+																<div class="catalog">
+																	<div class="titled">
+																		Головные уборы
+																	</div>
 
 
 
@@ -429,21 +466,21 @@ $APPLICATION->SetTitle("Фабрика «Золотое Руно»");
 
 
 
-                                  <!-- <div class="seemore">
-                                    Показать больше
-                                  </div> -->
-                                </div>
-                <!-- end catalog -->
+																	<!-- <div class="seemore">
+																		Показать больше
+																	</div> -->
+																</div>
+								<!-- end catalog -->
 <div class="hr"></div>
 <!-- begin catalog -->
-                <div class="catalog">
-                  <div class="titled">
-                    Одежда кожаная и меховая
-                  </div>
+								<div class="catalog">
+									<div class="titled">
+										Одежда кожаная и меховая
+									</div>
 
 
 
-                  <?$APPLICATION->IncludeComponent(
+									<?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section",
 	"main",
 	array(
@@ -576,27 +613,27 @@ $APPLICATION->SetTitle("Фабрика «Золотое Руно»");
 	false
 );?>
 
-                  <!-- <div class="seemore">
-                    Показать больше
-                  </div> -->
-                </div>
+									<!-- <div class="seemore">
+										Показать больше
+									</div> -->
+								</div>
 <!-- end catalog -->
 
 
-              </div>
+							</div>
 
 
-              <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+							<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
 <script>
-    $(".sliders").slick({
-        slidesToShow: 1,
-        arrows: true,
-        dots: true,
-        prevArrow: '<div class="h_left"></div>',
-        nextArrow: '<div class="h_right"></div>',
-    })
+		$(".sliders").slick({
+				slidesToShow: 1,
+				arrows: true,
+				dots: true,
+				prevArrow: '<div class="h_left"></div>',
+				nextArrow: '<div class="h_right"></div>',
+		})
 </script>
 
 

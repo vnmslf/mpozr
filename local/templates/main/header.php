@@ -25,7 +25,7 @@ if (!\Bitrix\Main\Loader::includeModule('landing'))
 	<title><? $APPLICATION->ShowTitle(); ?></title>
 
 <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/order.css">
-<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/style.css">
+<link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/style.min.css">
 <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/media.css">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap" rel="stylesheet">

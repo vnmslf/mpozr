@@ -1,0 +1,119 @@
+.advantages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: calc((320px + 52px) * 3 + (20px * 3));
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 30px auto 0;
+  flex-wrap: wrap; }
+  .advantages .advantages__block {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(25% + 25px);
+    flex: 0 0 calc(25% + 25px);
+    min-width: 362px; }
+    .advantages .advantages__block .info {
+      text-transform: uppercase;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      border: 10px solid #2b392c;
+      padding: 25px 25px 0;
+      text-decoration: none;
+      min-height: 203px; }
+      .advantages .advantages__block .info .left {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        gap: 16px;
+        padding-bottom: 25px; }
+        .advantages .advantages__block .info .left .caption {
+          font-size: 30px;
+          font-weight: 700;
+          color: #2b392c; }
+        .advantages .advantages__block .info .left .descr {
+          font-size: 16px;
+          font-weight: 600;
+          color: #888a88; }
+        .advantages .advantages__block .info .left .action {
+          -ms-grid-column-align: end;
+          justify-self: end;
+          font-size: 11px;
+          color: #000000;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -webkit-box-align: end;
+          -ms-flex-align: end;
+          align-items: flex-end;
+          gap: 8px; }
+          .advantages .advantages__block .info .left .action .action__texts {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            gap: 2px;
+            padding-bottom: 5px; }
+      .advantages .advantages__block .info .right {
+        -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end; }
+  @media (max-width: 1500px) and (min-width: 769px) {
+    .advantages {
+      gap: 10px;
+      max-width: 100%;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      .advantages .advantages__block {
+        max-width: 362px; } }
+  @media (max-width: 768px) {
+    .advantages {
+      gap: 12px;
+      max-width: 100%;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .advantages .advantages__block {
+        max-width: 100%;
+        min-width: unset; } }
+  @media (max-width: 444px) {
+    .advantages .advantages__block .info .left {
+      position: relative;
+      z-index: 1; }
+    .advantages .advantages__block .info .right {
+      position: absolute;
+      right: 35px;
+      z-index: 0; } }
