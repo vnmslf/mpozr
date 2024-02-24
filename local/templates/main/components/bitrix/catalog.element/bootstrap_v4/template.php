@@ -1,6 +1,8 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Localization\Loc;
+use Bitrix\Main\Page\Asset;
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/css/listing__detail.min.css');
 
 /**
  * @global CMain $APPLICATION
@@ -14,6 +16,7 @@ use Bitrix\Main\Localization\Loc;
  */
 
 $this->setFrameMode(true);
+
 
 $templateLibrary = array('popup', 'fx');
 $currencyList = '';
@@ -354,7 +357,28 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 					</div>
 
 
-
+					<div class="chars">
+<?if($arResult['PROPERTIES']['gender']['VALUE'][0] == 'Мужская') {
+	$link__listing = '/list/zr-ol-man.doc';
+} else {
+	$link__listing = '/list/zr-ol-woman.doc';
+}?>
+						<a href="<?=$link__listing?>" class="rod listing">
+							<span class="caption">Обмерочный лист</span>
+							<span class="action">
+								<span class="action__icon">
+									<img src="<?=SITE_TEMPLATE_PATH?>/img/advantages/word.png" alt="">
+								</span>
+								<span class="action__texts">
+									<span class="text">Скачать .doc</span>
+									<span class="text">Заполнить</span>
+									<span class="text">Отправить по Email</span>
+								</span>
+							</span>
+						</a>
+						<div class="rodds">
+						</div>
+					</div>
 					<div class="chars">
 						<div class="rod">
 							Цена
